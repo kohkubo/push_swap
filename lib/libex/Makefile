@@ -24,6 +24,7 @@ src =\
 	./ft_isspace.c \
 	./ft_strcmp.c \
 	./ft_xstrdup.c \
+	./ft_xcalloc.c
 
 # ***********************************
 
