@@ -2,18 +2,19 @@
 
 void	bclstclear(t_bclst **lst, void (*del)(void *))
 {
-	t_bclst	*sentry;
 	t_bclst	*tmp;
+	t_bclst	*anc;
 
 	if (!del || !lst || !*lst)
 		return ;
-	sentry = bclstsentry(*lst);
-	while (sentry->next->content != NULL)
+	anc = bclstsentry(*lst);
+	anc = anc->next;
+	while (anc->content != NULL)
 	{
-		tmp = sentry->next->next;
-		bclstdelone(sentry->next, del);
-		free(sentry->next);
-		sentry->next = tmp;
+		tmp = anc->next;
+		bclstdelone(anc, del);
+		anc = tmp;
 	}
-	free(sentry);
+	free(anc);
+	*lst = NULL;
 }
