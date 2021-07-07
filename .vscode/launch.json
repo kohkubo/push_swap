@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "c_debug",
+			"type": "lldb",
+			"request": "launch",
+			"program": "/Users/kohkubo/GitHub/42_master/push_swap/a.out",
+			"args": [
+				"./test/ex_1"
+			],
+			"cwd": "/Users/kohkubo/GitHub/42_master/push_swap/",
+			"preLaunchTask": "Build",
+			"postDebugTask": "rm_file"
+		}
+	]
+}

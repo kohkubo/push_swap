@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "c_make",
+			"command": "make -C",
+			"args": [
+				"/Users/kohkubo/GitHub/42_master/push_swap/lib/libbclst",
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "c_build",
+			"command": "gcc",
+			"args": [
+				"-g",
+				"/Users/kohkubo/GitHub/42_master/push_swap/lib/libbclst/libbclst.a",
+				"/Users/kohkubo/GitHub/42_master/push_swap/lib/libft/libft.a",
+				"/Users/kohkubo/GitHub/42_master/push_swap/lib/libex/libex.a",
+				"/Users/kohkubo/GitHub/42_master/push_swap/lib/libbclst/test/main.c",
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "rm_file",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"a.out",
+				"a.out.dSYM",
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"label": "Build",
+			"dependsOn": [
+				"c_build"
+			]
+		}
+	]
+}
