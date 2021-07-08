@@ -20,6 +20,8 @@ bclstinsert_next.c \
 bclstiter.c \
 bclstnew.c \
 bclstsentry.c \
+bclstsize.c \
+bclstnull.c \
 bclstfirst.c \
 
 # ***********************************
