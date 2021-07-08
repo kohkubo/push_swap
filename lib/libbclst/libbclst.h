@@ -7,8 +7,8 @@ typedef struct s_bclst
 	void			*content;
 }	t_bclst;
 
-void	bclstadd_back(t_bclst **lst, t_bclst *newlst);
-void	bclstadd_next(t_bclst **lst, t_bclst *newlst);
+void	bclstadd_last(t_bclst **lst, t_bclst *newlst);
+void	bclstadd_first(t_bclst **lst, t_bclst *newlst);
 void	bclstclear(t_bclst **lst, void (*del)(void *));
 void	bclstdelone(t_bclst *lst, void (*del)(void *));
 t_bclst	*bclstinit(t_bclst *lst);

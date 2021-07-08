@@ -1,6 +1,6 @@
 #include "libbclst.h"
 
-void	bclstadd_next(t_bclst **lst, t_bclst *newlst)
+void	bclstadd_last(t_bclst **lst, t_bclst *newlst)
 {
 	t_bclst	*sentry;
 
@@ -9,9 +9,8 @@ void	bclstadd_next(t_bclst **lst, t_bclst *newlst)
 	if (*lst)
 	{
 		sentry = bclstsentry(*lst);
-		bclstinsert_next(sentry, newlst);
+		bclstinsert_back(sentry, newlst);
 	}
 	else
 		*lst = bclstinit(newlst);
-
 }

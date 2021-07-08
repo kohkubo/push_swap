@@ -10,8 +10,8 @@ obj		= $(src:%.c=%.o)
 # ***********************************
 
 src = \
-bclstadd_back.c \
-bclstadd_next.c \
+bclstadd_last.c \
+bclstadd_first.c \
 bclstclear.c \
 bclstdelone.c \
 bclstinit.c \
