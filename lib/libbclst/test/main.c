@@ -34,14 +34,14 @@ int main()
 	p = ft_xcalloc(sizeof(p));
 	p->num = 2;
 	p->index = index++;
-	bclstadd_back(&lst, bclstnew(p));
+	bclstadd_last(&lst, bclstnew(p));
 	// print_content(lst->content);
 	// print_content(lst->next->content);
 	// print_content(lst->next->next->content);
 	p = ft_xcalloc(sizeof(p));
 	p->num = 3;
 	p->index = index++;
-	bclstadd_back(&lst, bclstnew(p));
+	bclstadd_last(&lst, bclstnew(p));
 
 
 	int num = 4;
@@ -50,7 +50,7 @@ int main()
 		p = ft_xcalloc(sizeof(p));
 		p->num = num++;
 		p->index = index++;
-		bclstadd_back(&lst, bclstnew(p));
+		bclstadd_last(&lst, bclstnew(p));
 	}
 
 	bclstiter(lst, print_content);
