@@ -1,5 +1,12 @@
 #include "libex.h"
 
+static int	min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
 char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*ptr;

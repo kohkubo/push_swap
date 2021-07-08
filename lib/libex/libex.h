@@ -8,7 +8,6 @@
 void	strsort(char *str[], int n);
 char	**free_string_array(char **buf);
 int		get_next_line(int fd, char **line);
-int		min(int a, int b);
 void	free_set(void **dst, void *src);
 void	*ft_xmalloc(size_t size);
 void	ft_fatal(const char *emsg);
@@ -19,5 +18,8 @@ int		ft_isspace(int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_xstrdup(const char *s1);
 void	*ft_xcalloc(size_t size);
+void	ft_quick_sort(int array[], int left, int right);
+void	ft_error_exit(const char *emsg);
+
 
 #endif

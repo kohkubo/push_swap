@@ -13,7 +13,6 @@ src =\
 	./strsort.c \
 	./free_string_array.c \
 	./get_next_line.c \
-	./min.c \
 	./free_set.c \
 	./errlst.c \
 	./ft_xmalloc.c \
@@ -24,7 +23,9 @@ src =\
 	./ft_isspace.c \
 	./ft_strcmp.c \
 	./ft_xstrdup.c \
-	./ft_xcalloc.c
+	./ft_xcalloc.c \
+	./ft_quick_sort.c \
+	./ft_error_exit.c \
 
 # ***********************************
 
