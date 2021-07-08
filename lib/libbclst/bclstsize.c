@@ -7,8 +7,7 @@ int	bclstsize(t_bclst *lst)
 
 	if (lst == NULL)
 		return (0);
-	tmp = bclstsentry(lst);
-	tmp = tmp->next;
+	tmp = bclstfirst(lst);
 	len = 0;
 	while (tmp->content != NULL)
 	{

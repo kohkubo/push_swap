@@ -18,3 +18,4 @@ t_bclst	*bclstnew(void *content);
 t_bclst	*bclstsentry(t_bclst *lst);
 int		bclstsize(t_bclst *lst);
 void	bclstiter(t_bclst *lst, void (*f)(void *));
+t_bclst	*bclstfirst(t_bclst *lst);

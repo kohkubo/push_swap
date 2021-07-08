@@ -6,8 +6,7 @@ void	bclstiter(t_bclst *lst, void (*f)(void *))
 
 	if (!lst || !f)
 		return ;
-	tmp = bclstsentry(lst);
-	tmp = tmp->next;
+	tmp = bclstfirst(lst);
 	while (tmp->content != NULL)
 	{
 		f(tmp->content);

@@ -7,8 +7,7 @@ void	bclstclear(t_bclst **lst, void (*del)(void *))
 
 	if (!del || !lst || !*lst)
 		return ;
-	anc = bclstsentry(*lst);
-	anc = anc->next;
+	anc = bclstfirst(*lst);
 	while (anc->content != NULL)
 	{
 		tmp = anc->next;
