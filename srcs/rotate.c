@@ -12,18 +12,21 @@ static void	ft_lst_rotate(t_bclst **lst)
 
 void	ft_ra(t_bclst **lst_a, t_bclst **lst_b)
 {
+	printf("ra\n");
 	ft_lst_rotate(lst_a);
 	(void)lst_b;
 }
 
 void	ft_rb(t_bclst **lst_a, t_bclst **lst_b)
 {
+	printf("rb\n");
 	(void)lst_a;
 	ft_lst_rotate(lst_b);
 }
 
 void	ft_rr(t_bclst **lst_a, t_bclst **lst_b)
 {
+	printf("rr\n");
 	ft_lst_rotate(lst_a);
 	ft_lst_rotate(lst_b);
 }
