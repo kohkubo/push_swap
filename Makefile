@@ -14,6 +14,7 @@ src =\
 	./srcs/print.c \
 	./srcs/rotate.c \
 	./srcs/push.c \
+	./srcs/resolve.c \
 	./srcs/main.c \
 	./srcs/arr.c \
 	./srcs/reverse_rotate.c \

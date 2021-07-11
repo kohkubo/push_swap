@@ -21,6 +21,7 @@ void	ft_rb(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_rr(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_pa(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_pb(t_bclst **lst_a, t_bclst **lst_b);
+void	resolve_only_push(t_bclst **lst_a, t_bclst **lst_b);
 void	divide(t_bclst **lst_a, t_bclst **lst_b, int pivot);
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b);
 void	push_swap(int ac, char **av);
