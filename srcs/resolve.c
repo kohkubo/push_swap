@@ -1,5 +1,43 @@
 #include "../includes/push_swap.h"
 
+void	resolve_2_item(t_bclst **lst_a, t_bclst **lst_b)
+{
+	int	index0;
+	int	index1;
+
+	index0 = ((t_content *)((*lst_a)->content))->index;
+	index1 = ((t_content *)((*lst_a)->next->content))->index;
+	if (index0 > index1)
+		ft_sa(lst_a, lst_b);
+}
+
+void	resolve_3_item(t_bclst **lst_a, t_bclst **lst_b)
+{
+	int	index0;
+	int	index1;
+	int	index2;
+
+	index0 = ((t_content *)((*lst_a)->content))->index;
+	index1 = ((t_content *)((*lst_a)->next->content))->index;
+	index2 = ((t_content *)((*lst_a)->next->next->content))->index;
+	if (index0 == 2 && index1 == 1)
+	{
+		ft_sa(lst_a, lst_b);
+		ft_rra(lst_a, lst_b);
+	}
+	else if (index0 == 2 && index1 == 0)
+		ft_ra(lst_a, lst_b);
+	else if (index0 == 1 && index1 == 2)
+		ft_rra(lst_a, lst_b);
+	else if (index0 == 1 && index1 == 0)
+		ft_sa(lst_a, lst_b);
+	else if (index0 == 0 && index1 == 2)
+	{
+		ft_rra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+	}
+}
+
 void	resolve_only_push(t_bclst **lst_a, t_bclst **lst_b)
 {
 	t_content	*c;
