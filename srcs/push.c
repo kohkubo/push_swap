@@ -20,7 +20,7 @@ static void	ft_lst_push(t_bclst **out, t_bclst **in)
 	con = bclst_content_copy((*out)->content);
 	tmp = (*out)->next;
 	bclstdelone(*out, free);
-	*out = tmp;
+	*out = bclstfirst(tmp);
 	bclstadd_first(in, bclstnew(con));
 	*in = bclstfirst(*in);
 }
