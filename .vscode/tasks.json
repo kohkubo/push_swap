@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "c_build",
+			"command": "make",
+			"args": [
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "rm_file",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"a.out",
+				"a.out.dSYM",
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "never"
+			}
+		}
+	]
+}
