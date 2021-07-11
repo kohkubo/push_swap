@@ -2,9 +2,6 @@
 
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b)
 {
-	// divide(lst_a, lst_b, bclstsize(*lst_a) / 2);
-	// resolve_only_push(lst_a, lst_b);
-
 	ps_print(*lst_a, *lst_b);
 }
 
