@@ -9,7 +9,6 @@ typedef struct s_content
 	int	index;
 }	t_content;
 
-void	take_index(t_bclst *lst, int *arr, int len);
 void	ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b);
 void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b);
 void	display_int_arr(int arr[], int arr_len);
@@ -22,7 +21,6 @@ void	ft_rb(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_rr(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_pa(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_pb(t_bclst **lst_a, t_bclst **lst_b);
-t_bclst	*ps_lst(int ac, char **av);
 void	divide(t_bclst **lst_a, t_bclst **lst_b, int pivot);
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b);
 void	push_swap(int ac, char **av);
