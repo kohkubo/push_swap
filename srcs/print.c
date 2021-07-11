@@ -44,6 +44,8 @@ void	ps_print(t_bclst *lst_a, t_bclst *lst_b)
 
 	tmp_a = bclstfirst(lst_a);
 	tmp_b = bclstfirst(lst_b);
+
+	printf("=================\n");
 	printf("%s | %s\n", "a", "b");
 	printf("------\n");
 	while (tmp_a->content != NULL || tmp_b->content != NULL)
@@ -54,4 +56,5 @@ void	ps_print(t_bclst *lst_a, t_bclst *lst_b)
 		if (tmp_b->content != NULL)
 			tmp_b = tmp_b->next;
 	}
+	printf("=================\n");
 }
