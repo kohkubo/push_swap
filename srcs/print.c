@@ -2,6 +2,7 @@
 
 void	display_int_arr(int arr[], int arr_len)
 {
+	printf("sorted arr : ");
 	printf("%d", arr[0]);
 	for (int i = 1; i < arr_len; i++)
 		printf(" %d", arr[i]);
