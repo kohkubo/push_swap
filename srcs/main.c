@@ -1,56 +1,30 @@
 #include "../includes/push_swap.h"
 
-t_bclst	*ps_lst(int ac, char **av)
-{
-	t_bclst		*lst;
-	t_content	*p;
-	int			i;
-
-	lst = NULL;
-	i = 1;
-	while (i < ac)
-	{
-		p = ft_xcalloc(sizeof(t_content));
-		p->n = ft_atoi(av[i]);
-		p->index = 0;
-		bclstadd_last(&lst, bclstnew((void *)p));
-		i++;
-	}
-	lst = lst->next;
-	return (lst);
-}
-
 void	divide(t_bclst **lst_a, t_bclst **lst_b, int pivot)
 {
 	t_content	*c;
-	t_bclst		*tmp;
 
-	tmp = *lst_a;
-	while (tmp->content != NULL)
+	printf("pivot : %d\n", pivot);
+	while ((*lst_a)->content != NULL)
 	{
-		c = (t_content *)(tmp->content);
-		// ft_pa(&tmp, lst_b);
+		c = (t_content *)((*lst_a)->content);
 		if (c->index < pivot)
 		{
-			ft_pa(&tmp, lst_b);
+			ft_pa(lst_a, lst_b);
 			continue ;
 		}
-		tmp = tmp->next;
+		*lst_a = (*lst_a)->next;
 	}
+	*lst_a = bclstfirst(*lst_a);
 }
 
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b)
 {
-	// divide(lst_a, lst_b, bclstsize(*lst_a) / 2);
+	divide(lst_a, lst_b, bclstsize(*lst_a) / 2);
 
 	printf("=================\n");
 	ps_print(*lst_a, *lst_b);
-	// bclstiter(*lst_a, print_content2);
-	// printf("=↑a===↓b================\n");
-	// bclstiter(*lst_b, print_content2);
-
 	printf("=================\n");
-
 }
 
 void	push_swap(int ac, char **av)
