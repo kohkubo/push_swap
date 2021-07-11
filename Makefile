@@ -2,7 +2,7 @@
 
 NAME	= push_swap
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -O3 -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -O3 -g -fsanitize=address -fno-omit-frame-pointer
 obj		= $(src:%.c=%.o)
 
 .PHONY: all clean fclean re debug sani-debug
@@ -10,9 +10,12 @@ obj		= $(src:%.c=%.o)
 # ***********************************
 
 src =\
+	./srcs/util.c \
+	./srcs/print.c \
 	./srcs/rotate.c \
 	./srcs/push.c \
 	./srcs/main.c \
+	./srcs/arr.c \
 	./srcs/reverse_rotate.c \
 	./srcs/valid_args.c \
 	./srcs/ft_isnum.c \

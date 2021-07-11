@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static t_content	*bclst_content_copy(void *content)
+static void	*bclst_content_copy(void *content)
 {
 	t_content	*p;
 	t_content	*tmp;
@@ -9,22 +9,25 @@ static t_content	*bclst_content_copy(void *content)
 	p = ft_xcalloc(sizeof(t_content));
 	p->n = tmp->n;
 	p->index = tmp->index;
-	return (p);
+	return ((void *)p);
 }
 
 static void	ft_lst_push(t_bclst **out, t_bclst **in)
 {
-	void	*tmp;
+	void	*con;
+	t_bclst	*tmp;
 
-	tmp = bclst_content_copy((*out)->content);
+	con = bclst_content_copy((*out)->content);
+	tmp = (*out)->next;
 	bclstdelone(*out, free);
-	bclstadd_first(in, bclstnew(tmp));
-	*out = bclstfirst(*out);
+	*out = tmp;
+	bclstadd_first(in, bclstnew(con));
 	*in = bclstfirst(*in);
 }
 
 void	ft_pa(t_bclst **lst_a, t_bclst **lst_b)
 {
+	// printf("content : %d\n", ((t_content *)(*lst_a)->content)->n);
 	ft_lst_push(lst_a, lst_b);
 }
 
