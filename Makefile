@@ -15,6 +15,7 @@ src =\
 	./srcs/rotate.c \
 	./srcs/push.c \
 	./srcs/resolve.c \
+	./srcs/destructor.c \
 	./srcs/main.c \
 	./srcs/arr.c \
 	./srcs/divide.c \
@@ -22,6 +23,7 @@ src =\
 	./srcs/valid_args.c \
 	./srcs/ft_isnum.c \
 	./srcs/swap.c \
+	./srcs/constructor.c \
 
 # ***********************************
 
