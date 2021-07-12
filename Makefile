@@ -17,6 +17,7 @@ src =\
 	./srcs/resolve.c \
 	./srcs/main.c \
 	./srcs/arr.c \
+	./srcs/divide.c \
 	./srcs/reverse_rotate.c \
 	./srcs/valid_args.c \
 	./srcs/ft_isnum.c \
