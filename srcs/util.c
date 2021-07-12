@@ -74,10 +74,10 @@ static void	check_sort(t_bclst *lst, int *arr_sorted)
 	{
 		p = (t_content *)tmp->content;
 		if (p->n != *arr_sorted++)
-			ft_fatal("this lst is not sorted!!");
+			ft_fatal(BOLDRED"this lst is not sorted!!"RESET);
 		tmp = tmp->next;
 	}
-	printf("OK! this lst is sorted!!\n");
+	printf(BOLDGREEN"OK! this lst is sorted!!\n"RESET);
 }
 
 void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b, int *ans_arr)
