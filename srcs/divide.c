@@ -24,12 +24,14 @@ void	divide_3_item(t_bclst **lst_a, t_bclst **lst_b)
 {
 	t_content	*c;
 	int			len;
+	int			index;
 
 	len = bclstsize(*lst_a);
+	index = len - 3;
 	while (len > 3)
 	{
 		c = (t_content *)((*lst_a)->content);
-		if (c->index < 3)
+		if (c->index < index)
 		{
 			ft_pa(lst_a, lst_b);
 			len--;

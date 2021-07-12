@@ -11,6 +11,17 @@ void	resolve_2_item(t_bclst **lst_a, t_bclst **lst_b)
 		ft_sa(lst_a, lst_b);
 }
 
+void	resolve_2_item_b(t_bclst **lst_a, t_bclst **lst_b)
+{
+	int	index0;
+	int	index1;
+
+	index0 = ((t_content *)((*lst_a)->content))->index;
+	index1 = ((t_content *)((*lst_a)->next->content))->index;
+	if (index0 < index1)
+		ft_sa(lst_a, lst_b);
+}
+
 void	pa_all(t_bclst **lst_a, t_bclst **lst_b)
 {
 	while ((*lst_b)->content != NULL)
@@ -19,11 +30,18 @@ void	pa_all(t_bclst **lst_a, t_bclst **lst_b)
 
 void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b)
 {
+	int	len;
+
 	divide_3_item(lst_a, lst_b);
-	resolve_3_item_a(lst_a, lst_b);
-	printf("-------------------\n");
 	// ps_print(*lst_a, *lst_b);
-	resolve_3_item_b(lst_b, lst_a);
+	resolve_3_item_a(lst_a, lst_b);
+	// ps_print(*lst_a, *lst_b);
+	// printf("-------------------\n");
+	len = bclstsize(*lst_b);
+	if (len == 2)
+		resolve_2_item_b(lst_b, lst_a);
+	else if (len == 3)
+		resolve_3_item_b(lst_b, lst_a);
 	pa_all(lst_a, lst_b);
 	// ps_print(*lst_a, *lst_b);
 }
