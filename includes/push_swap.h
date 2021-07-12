@@ -27,7 +27,6 @@ void	pa_all(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_3_item_b(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_3_item_a(t_bclst **lst_a, t_bclst **lst_b);
-void	resolve_3_item(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_only_push(t_bclst **lst_a, t_bclst **lst_b);
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b);
 void	push_swap(int ac, char **av);
