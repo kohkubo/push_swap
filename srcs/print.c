@@ -1,5 +1,12 @@
 #include "../includes/push_swap.h"
 
+void	display_array(char **array)
+{
+	while (*array)
+		printf("%s ", *array++);
+	printf("\n");
+}
+
 void	display_int_arr(int arr[], int arr_len)
 {
 	printf("%d", arr[0]);

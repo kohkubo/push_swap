@@ -20,6 +20,7 @@ void	push_swap(int ac, char **av)
 	t_bclst	*lst_b;
 	int		*ans_arr;
 
+	display_array(&av[1]);
 	ans_arr = ps_constructor(ac, av, &lst_a, &lst_b);
 	ps_do(&lst_a, &lst_b);
 	ps_destructor(&lst_a, &lst_b, ans_arr);
