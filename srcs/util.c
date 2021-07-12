@@ -44,26 +44,46 @@ static void	store_lst_index(t_bclst *lst, int *arr_sorted, int len)
 	}
 }
 
-static t_bclst	*index_lst(int ac, char **av)
+static t_bclst	*index_lst(int ac, char **av, int *ans_arr)
 {
-	int	*sorted_arr;
 	t_bclst	*lst;
 
 	lst = ps_lst(ac, av);
-	sorted_arr = ft_sort_arr(ac, av);
-	store_lst_index(lst, sorted_arr, ac - 1);
+	store_lst_index(lst, ans_arr, ac - 1);
 	return (lst);
 }
 
-void	ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b)
+int	*ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b)
 {
+	int	*ans_arr;
+
 	valid_args(ac, av);
-	*lst_a = index_lst(ac, av);
+	ans_arr = ft_sort_arr(ac, av);
+	*lst_a = index_lst(ac, av, ans_arr);
 	*lst_b = bclstnull();
+	return (ans_arr);
 }
 
-void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b)
+static void	check_sort(t_bclst *lst, int *arr_sorted)
 {
+	t_bclst *tmp;
+	t_content *p;
+
+	tmp = bclstfirst(lst);
+	while (tmp->content != NULL)
+	{
+		p = (t_content *)tmp->content;
+		if (p->n != *arr_sorted++)
+			ft_fatal("this lst is not sorted!!");
+		tmp = tmp->next;
+	}
+	printf("OK! this lst is sorted!!\n");
+}
+
+void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b, int *ans_arr)
+{
+	check_sort(*lst_a, ans_arr);
+	free(ans_arr);
 	bclstclear(lst_a, free);
 	bclstclear(lst_b, free);
 }

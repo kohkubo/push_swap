@@ -9,8 +9,8 @@ typedef struct s_content
 	int	index;
 }	t_content;
 
-void	ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b);
-void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b);
+int		*ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b);
+void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b, int *ans_arr);
 void	display_int_arr(int arr[], int arr_len);
 void	print_content(void *p);
 void	print_content2(void *p);
