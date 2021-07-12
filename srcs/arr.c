@@ -21,6 +21,5 @@ int	*ft_sort_arr(int ac, char **av)
 
 	arr = int_arr(ac, av);
 	ft_quick_sort(arr, 0, ac - 2);
-	display_int_arr(arr, ac - 1);
 	return (arr);
 }
