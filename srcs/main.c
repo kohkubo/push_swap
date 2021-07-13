@@ -6,9 +6,9 @@ void	ps_do(t_bclst **lst_a, t_bclst **lst_b)
 
 	len = bclstsize(*lst_a);
 	if (len == 2)
-		resolve_2_item(lst_a, lst_b);
+		resolve_two_asc(lst_a, lst_b);
 	else if (len == 3)
-		resolve_3_item_a(lst_a, lst_b);
+		resolve_three_asc(lst_a, lst_b);
 	else if (len < 7)
 		resolve_6_item(lst_a, lst_b);
 	// ps_print(*lst_a, *lst_b);
