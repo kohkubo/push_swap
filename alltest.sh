@@ -13,5 +13,5 @@ while read line; do
   if [ ${checker_result} == "KO" ]; then
     echo "${line}" >> error_case.txt
   fi
-  # printf "${line}: count: ${count} checker: ${checker_result}\n"
+  printf "${line}: count: ${count} checker: ${checker_result}\n"
 done < permutation.txt
