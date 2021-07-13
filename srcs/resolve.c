@@ -26,3 +26,45 @@ void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b)
 	ps_print(*lst_a, *lst_b);
 #endif
 }
+
+void	resolve_three(t_bclst **lst_a, t_bclst **lst_b)
+{
+	t_index	in;
+
+	in.a0 = ((t_content *)((*lst_a)->content))->index;
+	in.a1 = ((t_content *)((*lst_a)->next->content))->index;
+	in.a2 = ((t_content *)((*lst_a)->next->next->content))->index;
+	in.b0 = ((t_content *)((*lst_b)->content))->index;
+	in.b1 = ((t_content *)((*lst_b)->next->content))->index;
+	in.b2 = ((t_content *)((*lst_b)->next->next->content))->index;
+
+	if (in.a0 > in.a1 && in.a1 > in.a2 && in.b0 < in.b1 && in.b1 < in.b2)
+	{
+		ft_ss(lst_a, lst_b);
+		ft_rrr(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 > in.a1 && in.a1 < in.a2 && in.a0 > in.a2) && (in.b0 < in.b1 && in.b1 > in.b2 && in.b0 < in.b2))
+	{
+		ft_rr(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 < in.a1 && in.a1 > in.a2 && in.a0 > in.a2) && (in.b0 > in.b1 && in.b1 < in.b2 && in.b0 < in.b2))
+	{
+		ft_rrr(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 > in.a1) && (in.a0 < in.a2) && (in.b0 < in.b1) && (in.b0 > in.b2))
+	{
+		ft_ss(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 < in.a1 && in.a1 > in.a2) && (in.b0 > in.b1 && in.b1 < in.b2))
+	{
+		ft_rrr(lst_a, lst_b);
+		ft_ss(lst_a, lst_b);
+		return ;
+	}
+	resolve_three_desc(lst_a, lst_b);
+	resolve_three_asc(lst_a, lst_b);
+}
