@@ -1,9 +1,9 @@
-make re
+# make re
 gen_permutation() {
   echo -e "from itertools import permutations\nfor i in permutations(list(range(0, $1))):\n  print(*i)" | python3
 }
 
-gen_permutation 3 > permutation.txt
+gen_permutation $1 > permutation.txt
 
 while read line; do
   count=$(./push_swap ${line} | wc -l | tr -d ' ')
