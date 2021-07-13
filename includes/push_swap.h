@@ -60,6 +60,7 @@ void	ft_rra(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_rrb(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_rrr(t_bclst **lst_a, t_bclst **lst_b);
 void	valid_args(int ac, char **av);
+void	resolve_only_push(t_bclst **lst_a, t_bclst **lst_b);
 bool	ft_isnum(char *s);
 void	ft_sa(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_sb(t_bclst **lst_a, t_bclst **lst_b);

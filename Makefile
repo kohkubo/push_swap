@@ -23,6 +23,7 @@ src =\
 	./srcs/divide.c \
 	./srcs/reverse_rotate.c \
 	./srcs/valid_args.c \
+	./srcs/test.c \
 	./srcs/ft_isnum.c \
 	./srcs/swap.c \
 	./srcs/constructor.c \
