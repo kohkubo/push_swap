@@ -51,45 +51,58 @@ void	resolve_three(t_bclst **lst_a, t_bclst **lst_b)
 	{
 		ft_ss(lst_a, lst_b);
 		ft_rrr(lst_a, lst_b);
+		return ;
 	}
-	else if (in.a0 > in.a1 && in.a1 > in.a2)
+	else if ((in.a0 > in.a1 && in.a1 < in.a2 && in.a0 > in.a2) && (in.b0 < in.b1 && in.b1 > in.b2 && in.b0 < in.b2))
+	{
+		ft_rr(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 < in.a1 && in.a1 > in.a2 && in.a0 > in.a2) && (in.b0 > in.b1 && in.b1 < in.b2 && in.b0 < in.b2))
+	{
+		ft_rrr(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 > in.a1) && (in.a0 < in.a2) && (in.b0 < in.b1) && (in.b0 > in.b2))
+	{
+		ft_ss(lst_a, lst_b);
+		return ;
+	}
+	else if ((in.a0 < in.a1 && in.a1 > in.a2) && (in.b0 > in.b1 && in.b1 < in.b2))
+	{
+		ft_rrr(lst_a, lst_b);
+		ft_ss(lst_a, lst_b);
+		return ;
+	}
+
+	if (in.a0 > in.a1 && in.a1 > in.a2)
 	{
 		ft_sa(lst_a, lst_b);
 		ft_rra(lst_a, lst_b);
 	}
-	else if (in.b0 < in.b1 && in.b1 < in.b2)
-	{
-		ft_sb(lst_a, lst_b);
-		ft_rrb(lst_a, lst_b);
-	}
-	else if (in.a0 > in.a1 && in.a1 > in.a2 && in.a0 > in.a2 && in.b0 < in.b1 && in.b1 > in.b2 && in.b0 < in.b2)
-		ft_rr(lst_a, lst_b);
-	else if (in.a0 > in.a1 && in.a1 > in.a2 && in.a0 > in.a2)
+	else if (in.a0 > in.a1 && in.a1 < in.a2 && in.a0 > in.a2)
 		ft_ra(lst_a, lst_b);
-	else if (in.b0 < in.b1 && in.b1 > in.b2 && in.b0 < in.b2)
-		ft_rb(lst_a, lst_b);
-	else if (in.a0 < in.a1 && in.a1 > in.a2 && in.a0 > in.a2 && in.b0 > in.b1 && in.b1 < in.b2 && in.b0 < in.b2)
-		ft_rrr(lst_a, lst_b);
 	else if (in.a0 < in.a1 && in.a1 > in.a2 && in.a0 > in.a2)
 		ft_rra(lst_a, lst_b);
-	else if (in.b0 > in.b1 && in.b1 < in.b2 && in.b0 < in.b2)
-		ft_rrb(lst_a, lst_b);
-	else if (in.a0 > in.a1 && in.b0 < in.b1)
-		ft_ss(lst_a, lst_b);
 	else if (in.a0 > in.a1)
 		ft_sa(lst_a, lst_b);
-	else if (in.b0 < in.b1)
-		ft_sb(lst_a, lst_b);
-	else if (in.a0 < in.a1 && in.a1 > in.a2 && in.b0 > in.b1 && in.b1 < in.b2)
-	{
-		ft_rrr(lst_a, lst_b);
-		ft_ss(lst_a, lst_b);
-	}
 	else if (in.a0 < in.a1 && in.a1 > in.a2)
 	{
 		ft_rra(lst_a, lst_b);
 		ft_sa(lst_a, lst_b);
 	}
+
+	if (in.b0 < in.b1 && in.b1 < in.b2)
+	{
+		ft_sb(lst_a, lst_b);
+		ft_rrb(lst_a, lst_b);
+	}
+	else if (in.b0 < in.b1 && in.b1 > in.b2 && in.b0 < in.b2)
+		ft_rb(lst_a, lst_b);
+	else if (in.b0 > in.b1 && in.b1 < in.b2 && in.b0 < in.b2)
+		ft_rrb(lst_a, lst_b);
+	else if (in.b0 < in.b1)
+		ft_sb(lst_a, lst_b);
 	else if (in.b0 > in.b1 && in.b1 < in.b2)
 	{
 		ft_rrb(lst_a, lst_b);
