@@ -12,7 +12,7 @@ void	divide(t_bclst **lst_a, t_bclst **lst_b)
 		c = (t_content *)((*lst_a)->content);
 		if (c->index < pivot)
 		{
-			ft_pa(lst_a, lst_b);
+			ft_pb(lst_a, lst_b);
 			continue ;
 		}
 		*lst_a = (*lst_a)->next;
@@ -33,7 +33,7 @@ void	divide_3_item(t_bclst **lst_a, t_bclst **lst_b)
 		c = (t_content *)((*lst_a)->content);
 		if (c->index < index)
 		{
-			ft_pa(lst_a, lst_b);
+			ft_pb(lst_a, lst_b);
 			len--;
 			continue ;
 		}
