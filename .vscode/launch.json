@@ -6,7 +6,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"program": "/Users/kohkubo/GitHub/42_master/push_swap/push_swap",
-			"args": ["2", "1", "3", "6", "5", "8"],
+			"args": ["1", "0", "2", "3"],
 			"cwd": "/Users/kohkubo/GitHub/42_master/push_swap",
 			"preLaunchTask": "c_build",
 			"postDebugTask": "rm_file"
