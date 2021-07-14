@@ -1,7 +1,7 @@
 # make re
 gen_permutation() {
   echo -e "import random\nfor num in range($2):\n
-    print(*random.sample(list(range(0, 10)), $1))" | python3
+    print(*random.sample(list(range(0, $1)), $1))" | python3
 }
 
 test_all() {
