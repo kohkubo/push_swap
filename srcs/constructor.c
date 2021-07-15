@@ -37,6 +37,7 @@ static t_bclst	*ps_lst(int ac, char **av)
 		p = ft_xcalloc(sizeof(t_content));
 		p->n = ft_atoi(av[i]);
 		p->index = 0;
+		p->group = 0;
 		bclstadd_last(&lst, bclstnew((void *)p));
 		i++;
 	}

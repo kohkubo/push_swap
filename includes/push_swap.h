@@ -7,6 +7,7 @@ typedef struct s_content
 {
 	int	n;
 	int	index;
+	int	group;
 }	t_content;
 typedef struct s_index
 {
@@ -40,12 +41,8 @@ void	print_content(void *p);
 void	print_content2(void *p);
 void	print_ab(void *a, void *b);
 void	ps_print(t_bclst *lst_a, t_bclst *lst_b);
-void	ft_ra(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_rb(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_rr(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_pa(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_pb(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b);
+void	resolve_over_six(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_three(t_bclst **lst_a, t_bclst **lst_b);
 void	check_sort(t_bclst *lst, int *arr_sorted);
 void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b, int *ans_arr);
@@ -55,13 +52,20 @@ int		main(int ac, char **av);
 int		*int_arr(int ac, char **av);
 int		*ft_sort_arr(int ac, char **av);
 void	divide(t_bclst **lst_a, t_bclst **lst_b);
+void	divide_a(t_bclst **lst_a, t_bclst **lst_b);
+void	divide_b(t_bclst **lst_a, t_bclst **lst_b, int pivot);
 void	divide_3_item(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_rra(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_rrb(t_bclst **lst_a, t_bclst **lst_b);
-void	ft_rrr(t_bclst **lst_a, t_bclst **lst_b);
 void	valid_args(int ac, char **av);
 void	resolve_only_push(t_bclst **lst_a, t_bclst **lst_b);
 bool	ft_isnum(char *s);
+void	ft_ra(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_rb(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_rr(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_pa(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_pb(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_rra(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_rrb(t_bclst **lst_a, t_bclst **lst_b);
+void	ft_rrr(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_sa(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_sb(t_bclst **lst_a, t_bclst **lst_b);
 void	ft_ss(t_bclst **lst_a, t_bclst **lst_b);
