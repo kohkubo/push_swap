@@ -12,6 +12,8 @@ int	*int_arr(int ac, char **av)
 		arr[i - 1] = ft_atoi(av[i]);
 		i++;
 	}
+	if (errno)
+		ft_error_exit("Error\n");
 	return (arr);
 }
 
