@@ -15,9 +15,9 @@ void	divide(t_bclst **lst_a, t_bclst **lst_b)
 			ft_pb(lst_a, lst_b);
 			continue ;
 		}
-		*lst_a = (*lst_a)->next;
+		ft_ra(lst_a, lst_b);
 	}
-	*lst_a = bclstfirst(*lst_a);
+}
 
 void	divide_a(t_bclst **lst_a, t_bclst **lst_b)
 {
@@ -84,5 +84,4 @@ void	divide_3_item(t_bclst **lst_a, t_bclst **lst_b)
 		}
 		ft_ra(lst_a, lst_b);
 	}
-	*lst_a = bclstfirst(*lst_a);
 }
