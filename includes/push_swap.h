@@ -44,6 +44,7 @@ void	ps_print(t_bclst *lst_a, t_bclst *lst_b);
 void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_over_six(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_three(t_bclst **lst_a, t_bclst **lst_b);
+bool	is_lstsort(t_bclst *lst, int *arr_sorted);
 void	check_sort(t_bclst *lst, int *arr_sorted);
 void	ps_destructor(t_bclst **lst_a, t_bclst **lst_b, int *ans_arr);
 void	ps_do(t_bclst **lst_a, t_bclst **lst_b);
