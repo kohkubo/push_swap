@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	check_sort(t_bclst *lst, int *arr_sorted)
 {

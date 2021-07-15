@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	resolve_two_asc(t_bclst **lst_a, t_bclst **lst_b)
 {

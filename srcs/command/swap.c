@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	ft_lst_swap(t_bclst *lst)
 {

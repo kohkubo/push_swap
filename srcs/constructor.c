@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	store_lst_index(t_bclst *lst, int *arr_sorted, int len)
 {

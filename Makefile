@@ -1,8 +1,9 @@
 # ***********************************
 
 NAME	= push_swap
+includes = -I./includes
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -O3 -g -fsanitize=address -fno-omit-frame-pointer
+CFLAGS	= -Wall -Wextra -Werror -O3 $(includes)
 obj		= $(src:%.c=%.o)
 
 .PHONY: all clean fclean re debug sani-debug
@@ -14,18 +15,18 @@ src =\
 	./srcs/resolve_desc.c \
 	./srcs/util.c \
 	./srcs/print.c \
-	./srcs/rotate.c \
-	./srcs/push.c \
 	./srcs/resolve.c \
 	./srcs/destructor.c \
 	./srcs/main.c \
 	./srcs/arr.c \
 	./srcs/divide.c \
-	./srcs/reverse_rotate.c \
 	./srcs/valid_args.c \
 	./srcs/test.c \
 	./srcs/ft_isnum.c \
-	./srcs/swap.c \
+	./srcs/command/rotate.c \
+	./srcs/command/push.c \
+	./srcs/command/reverse_rotate.c \
+	./srcs/command/swap.c \
 	./srcs/constructor.c \
 
 # ***********************************
