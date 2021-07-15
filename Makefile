@@ -13,16 +13,16 @@ obj		= $(src:%.c=%.o)
 src =\
 	./srcs/resolve_asc.c \
 	./srcs/resolve_desc.c \
-	./srcs/util.c \
-	./srcs/print.c \
+	./srcs/util/util.c \
+	./srcs/util/print.c \
+	./srcs/util/arr.c \
+	./srcs/util/valid_args.c \
+	./srcs/util/test.c \
+	./srcs/util/ft_isnum.c \
 	./srcs/resolve.c \
 	./srcs/destructor.c \
 	./srcs/main.c \
-	./srcs/arr.c \
 	./srcs/divide.c \
-	./srcs/valid_args.c \
-	./srcs/test.c \
-	./srcs/ft_isnum.c \
 	./srcs/command/rotate.c \
 	./srcs/command/push.c \
 	./srcs/command/reverse_rotate.c \
