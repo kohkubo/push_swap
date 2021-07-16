@@ -11,23 +11,24 @@ obj		= $(src:%.c=%.o)
 # ***********************************
 
 src =\
-	./srcs/resolve_asc.c \
-	./srcs/resolve_desc.c \
+	./srcs/resolve/resolve_two_three.c \
+	./srcs/resolve/resolve_last.c \
+	./srcs/resolve/resolve.c \
+	./srcs/resolve/divide.c \
 	./srcs/util/util.c \
 	./srcs/util/print.c \
+	./srcs/util/destructor.c \
 	./srcs/util/arr.c \
+	./srcs/util/three_state.c \
 	./srcs/util/valid_args.c \
 	./srcs/util/test.c \
 	./srcs/util/ft_isnum.c \
-	./srcs/resolve.c \
-	./srcs/destructor.c \
+	./srcs/util/constructor.c \
 	./srcs/main.c \
-	./srcs/divide.c \
 	./srcs/command/rotate.c \
 	./srcs/command/push.c \
 	./srcs/command/reverse_rotate.c \
 	./srcs/command/swap.c \
-	./srcs/constructor.c \
 
 # ***********************************
 

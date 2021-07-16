@@ -9,6 +9,8 @@ static void	*bclst_content_copy(void *content)
 	p = ft_xcalloc(sizeof(t_content));
 	p->n = tmp->n;
 	p->index = tmp->index;
+	p->group = tmp->group;
+	p->gcount = tmp->gcount;
 	return ((void *)p);
 }
 
