@@ -14,6 +14,7 @@ src =\
 	./srcs/resolve/resolve_two_three.c \
 	./srcs/resolve/resolve_last.c \
 	./srcs/resolve/resolve.c \
+	./srcs/resolve/resolve_six_over.c \
 	./srcs/resolve/divide.c \
 	./srcs/util/util.c \
 	./srcs/util/print.c \
