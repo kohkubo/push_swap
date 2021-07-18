@@ -29,7 +29,6 @@ static void	ft_lst_push(t_bclst **out, t_bclst **in)
 
 void	ft_pa(t_bclst **lst_a, t_bclst **lst_b)
 {
-	// printf("content : %d\n", ((t_content *)(*lst_a)->content)->n);
 	printf("pa\n");
 	ft_lst_push(lst_b, lst_a);
 }

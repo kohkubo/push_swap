@@ -12,18 +12,18 @@ obj		= $(src:%.c=%.o)
 
 src =\
 	./srcs/resolve/resolve_two_three.c \
-	./srcs/resolve/resolve_last.c \
 	./srcs/resolve/resolve.c \
 	./srcs/resolve/resolve_six_over.c \
 	./srcs/resolve/divide.c \
+	./srcs/resolve/divide2.c \
+	./srcs/resolve/resolve_util.c \
 	./srcs/util/util.c \
-	./srcs/util/print.c \
 	./srcs/util/destructor.c \
 	./srcs/util/arr.c \
-	./srcs/util/three_state.c \
 	./srcs/util/valid_args.c \
-	./srcs/util/test.c \
 	./srcs/util/ft_isnum.c \
+	./srcs/util/is_state2.c \
+	./srcs/util/is_state.c \
 	./srcs/util/constructor.c \
 	./srcs/main.c \
 	./srcs/command/rotate.c \

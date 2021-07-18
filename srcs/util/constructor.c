@@ -45,7 +45,7 @@ static t_bclst	*ps_lst(int ac, char **av)
 	return (lst);
 }
 
-static bool is_arr_duplicate(int* arr, int size)
+static bool	is_arr_duplicate(int *arr, int size)
 {
 	int	i;
 
@@ -58,7 +58,6 @@ static bool is_arr_duplicate(int* arr, int size)
 	}
 	return (false);
 }
-
 
 static t_bclst	*index_lst(int ac, char **av, int *ans_arr)
 {

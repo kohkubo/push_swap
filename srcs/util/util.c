@@ -29,14 +29,13 @@ void	lst_a_group_max_min(t_bclst *lst, int *max, int *min)
 
 bool	is_bclstsort(t_bclst *lst)
 {
-	int	i;
+	int			i;
 	t_content	*c;
 
 	i = 0;
 	while (lst->content != NULL)
 	{
 		c = (t_content *)lst->content;
-		// printf("c->index : %d\n", c->index);
 		if (c->index != i)
 			return (false);
 		lst = lst->next;
