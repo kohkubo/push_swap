@@ -36,11 +36,11 @@ void	print_ab(void *a, void *b)
 	t_content *acon = (t_content *)a;
 	t_content *bcon = (t_content *)b;
 	if (!a)
-		printf("%5s[  ][ ] | %5d[%2d][%d]\n", " ", bcon->n, bcon->group, bcon->gcount);
+		printf("%5s[  ]g[  ]gc[ ] | %5d[%2d]g[%2d]gc[%d]\n", " ", bcon->n, bcon->index, bcon->group, bcon->gcount);
 	else if (!b)
-		printf("%5d[%2d][%d] | %5s[  ][ ]\n", acon->n, acon->group, acon->gcount, " ");
+		printf("%5d[%2d]g[%2d]gc[%d] | %5s[  ]g[  ]gc[ ]\n", acon->n, acon->index, acon->group, acon->gcount, " ");
 	else
-		printf("%5d[%2d][%d] | %5d[%2d][%d]\n", acon->n, acon->group, acon->gcount, bcon->n, bcon->group, bcon->gcount);
+		printf("%5d[%2d]g[%2d]gc[%d] | %5d[%2d]g[%2d]gc[%d]\n", acon->n, acon->index, acon->group, acon->gcount, bcon->n, bcon->index, bcon->group, bcon->gcount);
 }
 
 void	ps_print(t_bclst *lst_a, t_bclst *lst_b)

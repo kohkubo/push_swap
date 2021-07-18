@@ -42,6 +42,42 @@ void	resolve_three(t_bclst **lst_a, t_bclst **lst_b)
 	resolve_three_asc(lst_a, lst_b);
 }
 
+void	resolve_three_lst_a_no_rotate(t_bclst **lst_a, t_bclst **lst_b)
+{
+	if (is_021(lst_a))
+	{
+		ft_ra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+		ft_rra(lst_a, lst_b);
+	}
+	else if (is_102(lst_a))
+	{
+		ft_sa(lst_a, lst_b);
+	}
+	else if (is_120(lst_a))
+	{
+		ft_ra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+		ft_rra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+	}
+	else if (is_201(lst_a))
+	{
+		ft_sa(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+		ft_rra(lst_a, lst_b);
+	}
+	else if (is_210(lst_a))
+	{
+		ft_sa(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+		ft_rra(lst_a, lst_b);
+		ft_sa(lst_a, lst_b);
+	}
+}
+
 void	resolve_b(t_bclst **lst_a, t_bclst **lst_b)
 {
 	if (is_021(lst_a))
@@ -109,4 +145,52 @@ void	resolve_6_item(t_bclst **lst_a, t_bclst **lst_b)
 #ifdef DEBUG
 	ps_print(*lst_a, *lst_b);
 #endif
+}
+
+void	resolve_six_over_loop_after(t_bclst **lst_a, t_bclst **lst_b, int asize, int bsize)
+{
+	if (asize == 2 && bsize == 3)
+	{
+		resolve_two_asc(lst_a, lst_b);
+		resolve_three_desc(lst_a, lst_b);
+		pa_all(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+	}
+	else if (asize == 3 && bsize == 2)
+	{
+		resolve_three_lst_a_no_rotate(lst_a, lst_b);
+		resolve_two_desc(lst_a, lst_b);
+		pa_all(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+	}
+	else if (asize == 2 && bsize == 2)
+	{
+		resolve_two_asc(lst_a, lst_b);
+		resolve_two_desc(lst_a, lst_b);
+		pa_all(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+	}
+	else if (asize == 3 && bsize == 3)
+	{
+		resolve_b(lst_a, lst_b);
+	}
+	else
+	{
+		resolve_three_desc(lst_a, lst_b);
+		pa_all(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+		ft_ra(lst_a, lst_b);
+	}
 }

@@ -12,22 +12,12 @@ void	resolve_over_six_2(t_bclst **lst_a, t_bclst **lst_b)
 	printf("-------------------\n");
 #endif
 	if (c_a->gcount == 2)
-	{
 		resolve_two_asc(lst_a, lst_b);
-	}
 	if (c_b->gcount == 2)
-	{
 		resolve_two_desc(lst_a, lst_b);
-	}
-	if (c_a->gcount == 3)
-	{
-
-	}
 	len = bclstsize(*lst_b);
 	if (len == 1)
-	{
 		resolve_three_asc(lst_a, lst_b);
-	}
 	if (len == 2)
 	{
 		resolve_three_asc(lst_a, lst_b);
@@ -43,61 +33,40 @@ void	resolve_over_six_2(t_bclst **lst_a, t_bclst **lst_b)
 
 void	resolve_over_six(t_bclst **lst_a, t_bclst **lst_b)
 {
-	// 半分に
+	int bsize;
+	int group;
+
 	divide_a(lst_a, lst_b);
 #ifdef DEBUG
+	printf("divide_a end\n");
 	ps_print(*lst_a, *lst_b);
-	printf("-------------------\n");
 #endif
-	// 再起でbを半分にしていく
-	int bsize = bclstsize(*lst_b);
-	int group = 1;
+	group = 1;
+	bsize = bclstsize(*lst_b);
 	while (bsize >= 4)
 	{
-		printf("bsize : %d\n", bsize);
 		bsize = divide_b(lst_a, lst_b, bclstsize(*lst_b) / 2 - 1, ++group);
 #ifdef DEBUG
+	printf("divide_b end\n");
 	ps_print(*lst_a, *lst_b);
-	printf("-------------------\n");
 #endif
 	}
-
-	int asize = ((t_content *)(*lst_a)->content)->gcount;
-	if (asize == 2 && bsize == 3)
+	while (((t_content *)(*lst_a)->content)->group != 0)
 	{
-		resolve_two_asc(lst_a, lst_b);
-		resolve_three_desc(lst_a, lst_b);
-		pa_all(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
+		resolve_six_over_loop_after(lst_a, lst_b, ((t_content *)(*lst_a)->content)->gcount, ((t_content *)(*lst_b)->content)->gcount);
+	#ifdef DEBUG
+		printf("resolve_six_over_loop_after end\n");
+		ps_print(*lst_a, *lst_b);
+	#endif
+		if (is_bclstsort(*lst_a))
+			break;
+		t_content	*ac = (t_content *)(*lst_a)->content;
+		int	gmin = ((t_content *)(*lst_a)->back->back->content)->index + 1;
+		int	pivot = gmin + ac->gcount / 2 - 1;
+		divide_loop(lst_a, lst_b, pivot, ac->group, ac->gcount);
+	#ifdef DEBUG
+		printf("divide_loop\n");
+		ps_print(*lst_a, *lst_b);
+	#endif
 	}
-	else if (asize == 2 && bsize == 2)
-	{
-		resolve_two_asc(lst_a, lst_b);
-		resolve_two_desc(lst_a, lst_b);
-		pa_all(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-	}
-	else if (asize == 3 && bsize == 3)
-	{
-		resolve_b(lst_a, lst_b);
-	}
-	else
-	{
-		resolve_three_desc(lst_a, lst_b);
-		pa_all(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-		ft_ra(lst_a, lst_b);
-	}
-#ifdef DEBUG
-	ps_print(*lst_a, *lst_b);
-	printf("-------------------\n");
-#endif
 }
