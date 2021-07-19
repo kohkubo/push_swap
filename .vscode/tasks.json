@@ -6,6 +6,7 @@
 			"label": "c_build",
 			"command": "make",
 			"args": [
+				"re"
 			],
 			"group": "build",
 			"presentation": {

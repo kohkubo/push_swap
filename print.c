@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	display_array(char **array)
 {
@@ -36,11 +36,11 @@ void	print_ab(void *a, void *b)
 	t_content *acon = (t_content *)a;
 	t_content *bcon = (t_content *)b;
 	if (!a)
-		printf("%s | %d\n", " ", bcon->n);
+		printf("%5s[  ]g[  ]gc[ ] | %5d[%2d]g[%2d]gc[%d]\n", " ", bcon->n, bcon->index, bcon->group, bcon->gcount);
 	else if (!b)
-		printf("%d | %s\n", acon->n, " ");
+		printf("%5d[%2d]g[%2d]gc[%d] | %5s[  ]g[  ]gc[ ]\n", acon->n, acon->index, acon->group, acon->gcount, " ");
 	else
-		printf("%d | %d\n", acon->n, bcon->n);
+		printf("%5d[%2d]g[%2d]gc[%d] | %5d[%2d]g[%2d]gc[%d]\n", acon->n, acon->index, acon->group, acon->gcount, bcon->n, bcon->index, bcon->group, bcon->gcount);
 }
 
 void	ps_print(t_bclst *lst_a, t_bclst *lst_b)
@@ -52,8 +52,8 @@ void	ps_print(t_bclst *lst_a, t_bclst *lst_b)
 	tmp_b = bclstfirst(lst_b);
 
 	printf("=================\n");
-	printf("%s | %s\n", "a", "b");
-	printf("------\n");
+	printf("%9s | %s\n", "a", "b");
+	printf("-----------------\n");
 	while (tmp_a->content != NULL || tmp_b->content != NULL)
 	{
 		print_ab(tmp_a->content, tmp_b->content);

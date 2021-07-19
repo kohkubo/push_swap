@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	*bclst_content_copy(void *content)
 {
@@ -9,6 +9,8 @@ static void	*bclst_content_copy(void *content)
 	p = ft_xcalloc(sizeof(t_content));
 	p->n = tmp->n;
 	p->index = tmp->index;
+	p->group = tmp->group;
+	p->gcount = tmp->gcount;
 	return ((void *)p);
 }
 
@@ -27,13 +29,12 @@ static void	ft_lst_push(t_bclst **out, t_bclst **in)
 
 void	ft_pa(t_bclst **lst_a, t_bclst **lst_b)
 {
-	// printf("content : %d\n", ((t_content *)(*lst_a)->content)->n);
 	printf("pa\n");
-	ft_lst_push(lst_a, lst_b);
+	ft_lst_push(lst_b, lst_a);
 }
 
 void	ft_pb(t_bclst **lst_a, t_bclst **lst_b)
 {
 	printf("pb\n");
-	ft_lst_push(lst_b, lst_a);
+	ft_lst_push(lst_a, lst_b);
 }

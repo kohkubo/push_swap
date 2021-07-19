@@ -1,10 +1,10 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	store_lst_index(t_bclst *lst, int *arr_sorted, int len)
 {
-	int	i;
-	t_bclst *tmp;
-	t_content *p;
+	int			i;
+	t_bclst		*tmp;
+	t_content	*p;
 
 	tmp = bclstfirst(lst);
 	while (tmp->content != NULL)
@@ -37,11 +37,26 @@ static t_bclst	*ps_lst(int ac, char **av)
 		p = ft_xcalloc(sizeof(t_content));
 		p->n = ft_atoi(av[i]);
 		p->index = 0;
+		p->group = 0;
 		bclstadd_last(&lst, bclstnew((void *)p));
 		i++;
 	}
 	lst = lst->next;
 	return (lst);
+}
+
+static bool	is_arr_duplicate(int *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (arr[i] == arr[i + 1])
+			return (true);
+		i++;
+	}
+	return (false);
 }
 
 static t_bclst	*index_lst(int ac, char **av, int *ans_arr)
@@ -59,6 +74,8 @@ int	*ps_constructor(int ac, char **av, t_bclst **lst_a, t_bclst **lst_b)
 
 	valid_args(ac, av);
 	ans_arr = ft_sort_arr(ac, av);
+	if (is_arr_duplicate(ans_arr, ac - 2))
+		ft_error_exit("Error\n");
 	*lst_a = index_lst(ac, av, ans_arr);
 	*lst_b = bclstnull();
 	return (ans_arr);
