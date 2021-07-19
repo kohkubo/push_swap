@@ -1,4 +1,4 @@
-# make re
+make
 gen_permutation() {
   echo -e "from itertools import permutations\nfor i in permutations(list(range(0, $1))):\n  print(*i)" | python3
 }
@@ -9,8 +9,9 @@ test_all() {
     checker_result=$(./push_swap ${line} | ./checker ${line})
     if [ ${checker_result} == "KO" ]; then
       echo "${line}" >> error_case.txt
+      printf "\e[31m%s\n\e[m" "${line}: count: ${count} checker: ${checker_result}"
     fi
-    # printf "${line}: count: ${count} checker: ${checker_result}\n"
+    printf "\e[32m%s\n\e[m" "${line}: count: ${count} checker: ${checker_result}"
   done < permutation.txt
 }
 
