@@ -15,8 +15,8 @@ src =\
 	./srcs/resolve/resolve.c \
 	./srcs/resolve/resolve_six_over.c \
 	./srcs/resolve/divide.c \
-	./srcs/resolve/divide2.c \
 	./srcs/resolve/resolve_util.c \
+	./srcs/resolve/divide2.c \
 	./srcs/util/util.c \
 	./srcs/util/destructor.c \
 	./srcs/util/arr.c \
@@ -36,15 +36,21 @@ src =\
 all: $(NAME)
 
 $(NAME): $(obj)
-	@$(MAKE) -C lib/libft
-	@$(MAKE) -C lib/libex
-	@$(MAKE) -C lib/libbclst
-	@$(CC) $(CFLAGS) $(obj) lib/libft/libft.a lib/libex/libex.a lib/libbclst/libbclst.a -o $(NAME)
+	$(MAKE) -C lib/libft
+	$(MAKE) -C lib/libex
+	$(MAKE) -C lib/libbclst
+	$(CC) $(CFLAGS) $(obj) lib/libft/libft.a lib/libex/libex.a lib/libbclst/libbclst.a -o $(NAME)
 
 clean:
+	$(MAKE) clean -C lib/libft
+	$(MAKE) clean -C lib/libex
+	$(MAKE) clean -C lib/libbclst
 	$(RM) $(obj)
 
 fclean: clean
+	$(MAKE) fclean -C lib/libft
+	$(MAKE) fclean -C lib/libex
+	$(MAKE) fclean -C lib/libbclst
 	$(RM) $(NAME)
 
 re: fclean all

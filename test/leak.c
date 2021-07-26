@@ -17,6 +17,6 @@ void	destructor(void)
 	else
 	{
 		system("rm leaksout");
-		printf("no leaks\n");
+		// printf("no leaks\n");
 	}
 }

@@ -2,7 +2,7 @@
 
 void	bclstiter(t_bclst *lst, void (*f)(void *))
 {
-	t_bclst *tmp;
+	t_bclst	*tmp;
 
 	if (!lst || !f)
 		return ;

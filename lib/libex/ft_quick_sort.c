@@ -2,18 +2,21 @@
 
 static void	swap(int *a, int *b)
 {
-	int tmp = *a;
+	int	tmp;
+
+	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
 
 void	ft_quick_sort(int array[], int left, int right)
 {
-	int pivot;
-	int i, j;
+	int	pivot;
+	int	i;
+	int	j;
 
 	if (left >= right)
-		return;
+		return ;
 	pivot = array[left];
 	i = left;
 	j = right;
@@ -24,7 +27,7 @@ void	ft_quick_sort(int array[], int left, int right)
 		while (array[j] > pivot)
 			j--;
 		if (i >= j)
-			break;
+			break ;
 		swap(&array[i], &array[j]);
 		i++;
 		j--;

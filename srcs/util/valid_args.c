@@ -8,7 +8,7 @@ void	valid_args(int ac, char **av)
 	while (i < ac)
 	{
 		if (!ft_isnum(av[i]))
-			ft_error_exit("Error");
+			ft_error_exit("Error\n");
 		i++;
 	}
 }

@@ -2,7 +2,7 @@
 
 int	bclstsize(t_bclst *lst)
 {
-	int	len;
+	int		len;
 	t_bclst	*tmp;
 
 	if (lst == NULL)

@@ -50,7 +50,8 @@ static bool	is_arr_duplicate(int *arr, int size)
 	int	i;
 
 	i = 0;
-	while (i < size - 1)
+
+	while (i <= size - 1)
 	{
 		if (arr[i] == arr[i + 1])
 			return (true);

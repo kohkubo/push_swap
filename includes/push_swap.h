@@ -3,6 +3,7 @@
 # include "../lib/libft/libft.h"
 # include "../lib/libex/libex.h"
 # include "../lib/libbclst/libbclst.h"
+
 typedef struct s_content
 {
 	int	n;
@@ -10,6 +11,7 @@ typedef struct s_content
 	int	group;
 	int	gcount;
 }	t_content;
+
 typedef struct s_index
 {
 	int	a0;
@@ -25,11 +27,6 @@ typedef struct s_index
 	int	bm1;
 	int	bm2;
 }	t_index;
-typedef enum e_order
-{
-	ASC,
-	DESC
-}	t_order;
 
 void	resolve_two_asc(t_bclst **lst_a, t_bclst **lst_b);
 void	resolve_two_desc(t_bclst **lst_a, t_bclst **lst_b);

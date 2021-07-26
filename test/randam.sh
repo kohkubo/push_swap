@@ -20,12 +20,12 @@ test_all() {
 
 rm -rf error_case.txt res permutation.txt
 
-for ((i=0; i < 100; i++)); do
-  gen_permutation $i 1 >> permutation.txt
-done
+# for ((i=0; i < 100; i++)); do
+#   gen_permutation $i 1 >> permutation.txt
+# done
 
-# # for ((i=0; i < 10; i++)); do
-#   gen_permutation $1 10 >> permutation.txt
-# # done
+for ((i=0; i < 10; i++)); do
+  gen_permutation $1 1 >> permutation.txt
+done
 
 test_all

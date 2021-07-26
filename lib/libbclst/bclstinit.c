@@ -5,7 +5,7 @@ t_bclst	*bclstinit(t_bclst *lst)
 	t_bclst	*sentry;
 
 	if (!lst)
-		return NULL;
+		return (NULL);
 	sentry = bclstnew(NULL);
 	sentry->next = lst;
 	sentry->back = lst;

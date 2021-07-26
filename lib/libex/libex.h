@@ -21,5 +21,4 @@ void	*ft_xcalloc(size_t size);
 void	ft_quick_sort(int array[], int left, int right);
 void	ft_error_exit(const char *emsg);
 
-
 #endif

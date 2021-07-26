@@ -11,21 +11,21 @@ static void	ft_lst_swap(t_bclst *lst)
 
 void	ft_sa(t_bclst **lst_a, t_bclst **lst_b)
 {
-	printf("sa\n");
+	write(1, "sa\n", 3);
 	ft_lst_swap(*lst_a);
 	(void)lst_b;
 }
 
 void	ft_sb(t_bclst **lst_a, t_bclst **lst_b)
 {
-	printf("sb\n");
+	write(1, "sb\n", 3);
 	(void)lst_a;
 	ft_lst_swap(*lst_b);
 }
 
 void	ft_ss(t_bclst **lst_a, t_bclst **lst_b)
 {
-	printf("ss\n");
+	write(1, "ss\n", 3);
 	ft_lst_swap(*lst_a);
 	ft_lst_swap(*lst_b);
 }
