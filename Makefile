@@ -62,6 +62,3 @@ debug: fclean
 
 sani-debug: fclean
 	$(MAKE) CFLAGS="$(CFLAGS) -D DEBUG=1 -g -fsanitize=address -fno-omit-frame-pointer"
-
-init:
-	zsh header.sh srcs includes/push_swap.h Makefile srcs
