@@ -6,27 +6,6 @@ void	pa_all(t_bclst **lst_a, t_bclst **lst_b)
 		ft_pa(lst_a, lst_b);
 }
 
-void	lst_a_group_max_min(t_bclst *lst, int *max, int *min)
-{
-	int			group;
-	t_content	*ac;
-
-	group = ((t_content *)lst->content)->group;
-	*min = INT_MAX;
-	*max = INT_MIN;
-	while (1)
-	{
-		ac = (t_content *)lst->content;
-		if (ac->group != group)
-			break ;
-		if (*min > ac->index)
-			*min = ac->index;
-		if (*max < ac->index)
-			*max = ac->index;
-		lst = lst->next;
-	}
-}
-
 bool	is_bclstsort(t_bclst *lst)
 {
 	int			i;
@@ -42,4 +21,40 @@ bool	is_bclstsort(t_bclst *lst)
 		i++;
 	}
 	return (true);
+}
+
+void	valid_args(int ac, char **av)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (!ft_isnum_string(av[i]))
+		{
+			ft_error_exit("Error\n");
+		}
+		i++;
+	}
+}
+
+t_bclst	*ps_lst(int ac, char **av)
+{
+	t_bclst		*lst;
+	t_content	*p;
+	int			i;
+
+	lst = NULL;
+	i = 1;
+	while (i < ac)
+	{
+		p = ft_xcalloc(sizeof(t_content));
+		p->n = ft_atoi(av[i]);
+		p->index = 0;
+		p->group = 0;
+		bclstadd_last(&lst, bclstnew((void *)p));
+		i++;
+	}
+	lst = lst->next;
+	return (lst);
 }

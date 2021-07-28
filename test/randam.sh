@@ -9,7 +9,7 @@ gen_permutation() {
 test_all() {
   while read line; do
     count=$(./push_swap ${line} | wc -l | tr -d ' ')
-    checker_result=$(./push_swap ${line} | ./checker ${line})
+    checker_result=$(./push_swap ${line} | ./checker_Mac ${line})
     if [ ${checker_result} == "KO" ]; then
       echo "${line}" >> error_case.txt
       printf "\e[31m%s\n\e[m" "${line}: count: ${count} checker: ${checker_result}"

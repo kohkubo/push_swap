@@ -22,7 +22,8 @@ void	push_swap(int ac, char **av)
 	int		*ans_arr;
 
 	ans_arr = ps_constructor(ac, av, &lst_a, &lst_b);
-	ps_do(&lst_a, &lst_b);
+	if (!is_bclstsort(lst_a))
+		ps_do(&lst_a, &lst_b);
 	ps_destructor(&lst_a, &lst_b, ans_arr);
 }
 
@@ -31,24 +32,4 @@ int	main(int ac, char **av)
 	if (ac > 1)
 		push_swap(ac, av);
 	return (0);
-}
-
-
-
-__attribute__((destructor))
-void	destructor(void)
-{
-	int status;
-	status = system("leaks push_swap &> leaksout");
-	if (status)
-	{
-		write(2, "leak!!!\n", 8);
-		system("cat leaksout >/dev/stderr");
-		exit(1);
-	}
-	else
-	{
-		system("rm leaksout");
-		// printf("no leaks\n");
-	}
 }

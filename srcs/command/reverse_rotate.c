@@ -19,7 +19,7 @@ void	ft_rra(t_bclst **lst_a, t_bclst **lst_b)
 
 void	ft_rrb(t_bclst **lst_a, t_bclst **lst_b)
 {
-	write(1,"rrb\n", 4);
+	write(1, "rrb\n", 4);
 	(void)lst_a;
 	ft_lst_reverse_rotate(lst_b);
 }

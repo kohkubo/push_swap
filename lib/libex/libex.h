@@ -20,5 +20,7 @@ char	*ft_xstrdup(const char *s1);
 void	*ft_xcalloc(size_t size);
 void	ft_quick_sort(int array[], int left, int right);
 void	ft_error_exit(const char *emsg);
+bool	ft_isnum_string(char *s);
+int		*string_array_to_int_array(char **str_array, int len);
 
 #endif

@@ -26,6 +26,8 @@ src =\
 	./ft_xcalloc.c \
 	./ft_quick_sort.c \
 	./ft_error_exit.c \
+	./ft_isnum_string.c \
+	./string_array_to_int_array.c \
 
 # ***********************************
 

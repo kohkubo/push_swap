@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 static int64_t	ps_atol(const char *s)
 {
 	uint64_t	n;
@@ -42,7 +41,9 @@ int	*int_arr(int ac, char **av)
 	{
 		tmp = ps_atol(av[i]);
 		if (tmp > INT_MAX || tmp < INT_MIN)
+		{
 			ft_error_exit("Error\n");
+		}
 		arr[i - 1] = tmp;
 		i++;
 	}
