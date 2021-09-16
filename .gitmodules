@@ -4,3 +4,6 @@
 [submodule "lib/libex"]
 	path = lib/libex
 	url = git@github.com:kohkubo/libex.git
+[submodule "lib/libbclst"]
+	path = lib/libbclst
+	url = git@github.com:kohkubo/libbclst.git
